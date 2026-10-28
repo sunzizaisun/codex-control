@@ -1,0 +1,42 @@
+name: Source checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: source-checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: node scripts/scan-public-source.mjs
+      - run: node --test scripts/test/*.test.mjs
+      - run: npm ci --ignore-scripts
+        working-directory: RemoteRelay
+      - run: npm test
+        working-directory: RemoteRelay
+      - run: npm ci --ignore-scripts
+        working-directory: DotsGateway
+      - run: npm run check && npm run check:events && npm test && npm run test:events && npx vitest run --config vitest.oauth.config.ts
+        working-directory: DotsGateway
+  swift:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - run: swift test --filter CodexWatchCoreTests
+      - run: swift test --filter CodexBridgeKitTests

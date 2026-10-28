@@ -1,0 +1,82 @@
+# Separate, synthetic-only native controller unit tests. The hosts and test
+# bundle refuse non-simulator compilation; use only the two fixed QA UUIDs.
+name: ControllerFaultQA
+options:
+  bundleIdPrefix: com.sunzizai.codexwatch.qa
+packages:
+  LocalCore:
+    path: .
+settings:
+  base:
+    GENERATE_INFOPLIST_FILE: YES
+    SWIFT_VERSION: '6.0'
+    CODE_SIGN_IDENTITY: '-'
+    CODE_SIGNING_ALLOWED: YES
+targets:
+  ControllerPhoneHost:
+    type: application
+    platform: iOS
+    deploymentTarget: '17.0'
+    sources: [Tests/Fixtures/ControllerFaultHost.swift]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.qa.controller-phone-host
+  ControllerWatchHost:
+    type: application
+    platform: watchOS
+    deploymentTarget: '10.0'
+    sources: [Tests/Fixtures/ControllerFaultHost.swift]
+    info:
+      path: Config/ControllerWatchHost.generated.plist
+      properties:
+        WKApplication: true
+        WKWatchOnly: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.qa.controller-watch-host
+  ControllerPhoneTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: '17.0'
+    sources:
+      - Tests/Controllers
+      - Apps/iOS/PhoneRelayController.swift
+      - Apps/iOS/LiveActivityManager.swift
+    dependencies:
+      - target: ControllerPhoneHost
+      - package: LocalCore
+        product: CodexWatchCore
+    settings:
+      base:
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: '$(inherited) CONTROLLER_FAULT_TESTS'
+  ControllerWatchTests:
+    type: bundle.unit-test
+    platform: watchOS
+    deploymentTarget: '10.0'
+    sources:
+      - Tests/Controllers
+      - Apps/Watch/WatchRelayController.swift
+    dependencies:
+      - target: ControllerWatchHost
+      - package: LocalCore
+        product: CodexWatchCore
+    settings:
+      base:
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: '$(inherited) CONTROLLER_FAULT_TESTS'
+schemes:
+  ControllerPhoneFaultQA:
+    build:
+      targets:
+        ControllerPhoneTests: [test]
+    test:
+      targets:
+        - name: ControllerPhoneTests
+          parallelizable: false
+  ControllerWatchFaultQA:
+    build:
+      targets:
+        ControllerWatchTests: [test]
+    test:
+      targets:
+        - name: ControllerWatchTests
+          parallelizable: false

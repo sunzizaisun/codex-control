@@ -1,0 +1,46 @@
+# Native XCTest UI automation only. Uses an already installed QA simulator
+# app by exact bundle ID; never selects, installs or operates physical devices.
+name: CodexInterfaceQA
+options:
+  bundleIdPrefix: com.sunzizai.codexwatch.qa
+settings:
+  base:
+    GENERATE_INFOPLIST_FILE: YES
+    SWIFT_VERSION: '6.0'
+    CODE_SIGNING_ALLOWED: NO
+targets:
+  RelayPhoneInterfaceTests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: '17.0'
+    sources:
+      - Tests/Interface
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.qa.phone-interface
+  RelayWatchInterfaceTests:
+    type: bundle.ui-testing
+    platform: watchOS
+    deploymentTarget: '10.0'
+    sources:
+      - Tests/Interface
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.qa.watch-interface
+schemes:
+  RelayPhoneInterfaceQA:
+    build:
+      targets:
+        RelayPhoneInterfaceTests: [test]
+    test:
+      targets:
+        - name: RelayPhoneInterfaceTests
+          parallelizable: false
+  RelayWatchInterfaceQA:
+    build:
+      targets:
+        RelayWatchInterfaceTests: [test]
+    test:
+      targets:
+        - name: RelayWatchInterfaceTests
+          parallelizable: false

@@ -1,0 +1,35 @@
+{
+  "name": "codex-control-dots",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "check": "tsc --noEmit",
+    "types": "wrangler types",
+    "test:events": "vitest run --config vitest.events.config.ts",
+    "check:events": "tsc --noEmit --project tsconfig.events.json"
+  },
+  "overrides": {
+    "sharp": "0.35.5",
+    "undici": "7.30.1",
+    "zod": "4.6.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "1.3.7",
+    "@cloudflare/workers-types": "5.20261007.1",
+    "@msw/cloudflare": "0.1.0",
+    "emoji-datasource": "16.0.0",
+    "msw": "2.15.0",
+    "typescript": "7.0.2",
+    "vitest": "4.1.12",
+    "wrangler": "4.148.0"
+  },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "1.2.3",
+    "@modelcontextprotocol/server": "2.3.1",
+    "http-parser-js": "0.5.10",
+    "ipaddr.js": "2.5.0",
+    "standardwebhooks": "1.1.1",
+    "zod": "4.6.6"
+  }
+}

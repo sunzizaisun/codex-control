@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "codex-watch-dots",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "secrets": { "required": ["SLACK_USER_TOKEN", "DOTS_AUTH_KEY"] },
+  "vars": {
+    "SLACK_TEAM_ID": "T_REPLACE_ME",
+    "SLACK_OWNER_ID": "U_OWNER_REPLACE_ME",
+    "SLACK_DOT_ID": "U_DOT_REPLACE_ME",
+    "SLACK_DOT_CHANNEL": "D_REPLACE_ME",
+    "DOT_NAME": "dot"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "DOT_ACCOUNTS", "class_name": "DotAccount" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DotAccount"] }]
+}

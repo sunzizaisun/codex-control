@@ -1,0 +1,23 @@
+{
+  "name": "codex-watch-relay",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:device-relay": "node --test tests/device-relay.test.mjs",
+    "test:device-enrollment": "node --test tests/device-enrollment.test.mjs",
+    "test:device-auth": "node --test tests/device-auth.test.mjs",
+    "test:signed-envelope": "node --test tests/signed-envelope.test.mjs",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "dependencies": {
+    "jose": "6.2.12"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "overrides": {
+    "sharp": "0.35.5",
+    "undici": "7.30.1"
+  }
+}

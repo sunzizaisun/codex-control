@@ -1,0 +1,16 @@
+name = "codex-watch-relay"
+main = "src/index.js"
+compatibility_date = "2026-07-22"
+
+[vars]
+# Migration window for devices that remain on the installed build. v2 uses a
+# separate authenticated room namespace and never reads legacy packets.
+ALLOW_LEGACY_RELAY = "false"
+
+[[durable_objects.bindings]]
+name = "RELAY_ROOMS"
+class_name = "RelayRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RelayRoom"]

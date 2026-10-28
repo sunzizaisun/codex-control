@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/events/**/*.ts", "src/slack.ts", "src/emoji.ts", "events-configuration.d.ts", "live-events-configuration.d.ts", "../DotsCallbackRelay/src/client.ts", "../DotsCallbackRelay/src/handler.ts"],
+  "compilerOptions": {
+    "types": ["@cloudflare/workers-types", "node"], "allowImportingTsExtensions": true,
+    "paths": {
+      "ipaddr.js": ["./node_modules/ipaddr.js"],
+      "http-parser-js": ["./node_modules/http-parser-js"],
+      "zod": ["./node_modules/zod"]
+    }
+  }
+}

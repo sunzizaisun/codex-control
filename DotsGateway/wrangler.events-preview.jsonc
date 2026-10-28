@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "codex-dots-events-local-preview",
+  "main": "src/events/preview.ts",
+  "tsconfig": "tsconfig.events.json",
+  "compatibility_date": "2026-10-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+  "secrets": { "required": ["EVENTS_DEVICE_KEY", "EVENTS_MCP_KEY"] },
+  "vars": { "EVENTS_MODE": "local-fixture-only", "EVENTS_OWNER": "local-test-owner" },
+  "durable_objects": { "bindings": [{ "name": "EVENT_INBOXES", "class_name": "DotEventInbox" }] },
+  "migrations": [{ "tag": "events-local-v1", "new_sqlite_classes": ["DotEventInbox"] }]
+}

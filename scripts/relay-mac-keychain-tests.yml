@@ -1,0 +1,77 @@
+# Isolated Mac host for actual protected-Keychain acceptance, not the normal
+# Mac bridge. Real profile-backed signing is required: never replace it with
+# fabricated/ad-hoc keychain entitlements just to make a runtime test pass.
+name: RelayMacKeychainTests
+options:
+  bundleIdPrefix: com.sunzizai.codexwatch.qa
+targets:
+  CodexWatchCore:
+    type: library.static
+    platform: macOS
+    deploymentTarget: '14.0'
+    sources:
+      - Sources/CodexWatchCore
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: CodexWatchCore
+        SWIFT_VERSION: '6.0'
+        ENABLE_TESTABILITY: YES
+        CODE_SIGNING_ALLOWED: NO
+  CodexBridgeKit:
+    type: library.static
+    platform: macOS
+    deploymentTarget: '14.0'
+    sources:
+      - Sources/CodexBridgeKit
+    dependencies:
+      - target: CodexWatchCore
+      - sdk: MultipeerConnectivity.framework
+      - sdk: Security.framework
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: CodexBridgeKit
+        SWIFT_VERSION: '6.0'
+        ENABLE_TESTABILITY: YES
+        CODE_SIGNING_ALLOWED: NO
+  RelayMacKeychainHost:
+    type: application
+    platform: macOS
+    deploymentTarget: '14.0'
+    sources:
+      - Tests/Fixtures/RelayKeychainHost.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.qa.mac-keychainhost
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: '6.0'
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM:
+        CODE_SIGN_IDENTITY: Apple Development
+        CODE_SIGN_ENTITLEMENTS: Tests/Fixtures/RelayMacKeychainHost.entitlements
+        ENABLE_APP_SANDBOX: YES
+  RelayMacProtectedTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: '14.0'
+    sources:
+      - Tests/Fixtures/RelayMacProtectedKeychainTests.swift
+      - Tests/Fixtures/RelayMacOwnerCredentialTests.swift
+    dependencies:
+      - target: RelayMacKeychainHost
+      - target: CodexWatchCore
+      - target: CodexBridgeKit
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: '6.0'
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM:
+        CODE_SIGN_IDENTITY: Apple Development
+schemes:
+  RelayMacProtectedTests:
+    build:
+      targets:
+        RelayMacProtectedTests: all
+    test:
+      targets:
+        - RelayMacProtectedTests

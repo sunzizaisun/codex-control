@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "source": "Actual Swift CryptoKit output, device-proof-interop.lhThBa, 2026-10-17; RFC 8032 public test seed only",
+  "accessToken": "XV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV0",
+  "jwk": {"crv": "Ed25519", "kty": "OKP", "x": "11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo"},
+  "method": "POST",
+  "nonce": "test-nonce-123",
+  "now": 1800000000,
+  "thumbprint": "kPrK_qmxVWaYVA9wwBF6Iuo3vVzz7TxHCTwXBygrS4k",
+  "url": "https://relay.example/v3/rooms/qa/mailbox/mac?ignored=1",
+  "proof": "eyJhbGciOiJFZDI1NTE5IiwiandrIjp7ImNydiI6IkVkMjU1MTkiLCJrdHkiOiJPS1AiLCJ4IjoiMTFxWUFZS3hDcmZWU183VHlXUUhPZzdoY3ZQYXBpTWxyd0lhYVBjSFVSbyJ9LCJ0eXAiOiJkcG9wK2p3dCJ9.eyJhdGgiOiIwZENlSDlqMmJTXzlrdk84bE9Cc1hHNEhMeEdIOHFHc1hQaThER1FzSVdjIiwiaHRtIjoiUE9TVCIsImh0dSI6Imh0dHBzOi8vcmVsYXkuZXhhbXBsZS92My9yb29tcy9xYS9tYWlsYm94L21hYyIsImlhdCI6MTgwMDAwMDAwMCwianRpIjoiMTI5Q0REQ0ItRTU2OC00RjMyLUI5MDYtOTNCNTYzMUQ4MkM3Iiwibm9uY2UiOiJ0ZXN0LW5vbmNlLTEyMyJ9.wlAmpjM2lPPVeK03fjmHhB4XxcTC4gW78YLpbIwtYuMahVT-KAamOOvuBLvbLO5pO9ByPP3O3acn9WeR_cpsBQ"
+}

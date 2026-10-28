@@ -1,0 +1,54 @@
+[
+  {
+    "roomID": "qa-runtime",
+    "keyID": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "deviceID": "qa-owner",
+    "role": "mac",
+    "tokenHash": "0ZVoo2tGwiM6EZeAUZydUJ0LOFW6SLQey3Of0ClTkVk",
+    "jwk": {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "PUAXw-hDiVqStwqnTRt-vJyYLM8uxJaMwM1V8Sr0Zgw"
+    },
+    "expiresAt": 1800003600000
+  },
+  {
+    "roomID": "qa-runtime",
+    "keyID": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "deviceID": "qa-phone",
+    "role": "phone",
+    "tokenHash": "0dCeH9j2bS_9kvO8lOBsXG4HLxGH8qGsXPi8DGQsIWc",
+    "jwk": {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo"
+    },
+    "expiresAt": 1800003600000
+  },
+  {
+    "deviceID": "qa-owner",
+    "expiresAt": 1800007200000,
+    "jwk": {
+      "crv": "Ed25519",
+      "kty": "OKP",
+      "x": "zPMfkqmNjaFRAP5KTAbZfgHJA4t21uOT_Mi2tf8ESVk"
+    },
+    "keyID": "8795d57b31051f613c241a9052e3ce50",
+    "role": "mac",
+    "roomID": "qa",
+    "tokenHash": "0ZVoo2tGwiM6EZeAUZydUJ0LOFW6SLQey3Of0ClTkVk"
+  },
+  {
+    "deviceID": "qa-phone",
+    "expiresAt": 1800003600000,
+    "jwk": {
+      "crv": "Ed25519",
+      "kty": "OKP",
+      "x": "snrn-CSpAM5Kfh-5ExobInZm2e9Azypndat-1Rw98SI"
+    },
+    "keyID": "8795d57b31051f613c241a9052e3ce50",
+    "role": "phone",
+    "roomID": "qa",
+    "tokenHash": "0dCeH9j2bS_9kvO8lOBsXG4HLxGH8qGsXPi8DGQsIWc"
+  }
+]

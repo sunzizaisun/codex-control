@@ -1,0 +1,58 @@
+# Run from the verified local source snapshot, never from the cloud-backed
+# Documents folder. All transports in these tests are isolated fixtures.
+name: DotNativeTests
+options:
+  bundleIdPrefix: com.sunzizai.codexwatch.qa
+# Compile the SAME Core sources directly in this isolated test project. There
+# are no external dependencies; invoking SwiftPM here needlessly touches the
+# user's global manifest cache and can block offline/sandboxed Keychain QA.
+targets:
+  CodexWatchCore:
+    type: library.static
+    platform: iOS
+    deploymentTarget: '17.0'
+    sources:
+      - Sources/CodexWatchCore
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: CodexWatchCore
+        SWIFT_VERSION: '6.0'
+        ENABLE_TESTABILITY: YES
+        CODE_SIGNING_ALLOWED: NO
+  RelayKeychainHost:
+    type: application
+    platform: iOS
+    deploymentTarget: '17.0'
+    sources:
+      - Tests/Fixtures/RelayKeychainHost.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.qa.keychainhost
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: '6.0'
+        CODE_SIGN_ENTITLEMENTS: Tests/Fixtures/RelayKeychainHost.entitlements
+        CODE_SIGN_IDENTITY: '-'
+        CODE_SIGNING_ALLOWED: YES
+  DotCoreTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: '17.0'
+    sources:
+      - Tests/CodexWatchCoreTests
+    dependencies:
+      - target: RelayKeychainHost
+      - target: CodexWatchCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: '6.0'
+        CODE_SIGNING_ALLOWED: YES
+        CODE_SIGN_IDENTITY: '-'
+schemes:
+  DotCoreTests:
+    build:
+      targets:
+        DotCoreTests: all
+    test:
+      targets:
+        - DotCoreTests

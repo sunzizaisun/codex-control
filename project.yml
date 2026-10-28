@@ -1,0 +1,207 @@
+name: CodexWatch
+
+options:
+  minimumXcodeGenVersion: 2.45.4
+  bundleIdPrefix: com.sunzizai.codexwatch
+  developmentLanguage: zh-Hans
+  defaultConfig: Debug
+  createIntermediateGroups: true
+  deploymentTarget:
+    macOS: "13.0"
+    iOS: "17.0"
+    watchOS: "10.0"
+
+packages:
+  CodexWatchPackage:
+    path: .
+
+fileGroups:
+  - Package.swift
+  - Resources
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "0.2.1"
+    CURRENT_PROJECT_VERSION: "20"
+    VERSIONING_SYSTEM: apple-generic
+    CODE_SIGN_STYLE: Automatic
+    # Normal Chat was retired. Codex/Work, approvals and device relay remain.
+    CODEX_BROWSER_GATEWAY_ENABLED: NO
+
+targets:
+  AgentBridgeMac:
+    type: application
+    platform: macOS
+    configFiles:
+      Debug: Config/RemoteRelay.xcconfig
+      Release: Config/RemoteRelay.xcconfig
+    deploymentTarget: "13.0"
+    sources:
+      - path: Apps/Mac
+      - path: Resources/Mac/Assets.xcassets
+        buildPhase: resources
+    dependencies:
+      - package: CodexWatchPackage
+        product: CodexWatchCore
+      - package: CodexWatchPackage
+        product: CodexBridgeKit
+      - sdk: MultipeerConnectivity.framework
+      - sdk: Network.framework
+      - sdk: LocalAuthentication.framework
+      - sdk: IOKit.framework
+    settings:
+      base:
+        PRODUCT_NAME: Agent Bridge
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.mac
+        # The free Personal Team cannot issue a macOS "Mac Development"
+        # certificate. Use a deterministic ad-hoc Debug signature so the Mac
+        # companion can still be built and run locally without a paid team.
+        # Release distribution remains an explicit signing step.
+        INFOPLIST_FILE: Resources/Mac/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        INFOPLIST_KEY_CodexBrowserGatewayEnabled: "$(CODEX_BROWSER_GATEWAY_ENABLED)"
+        CODE_SIGN_ENTITLEMENTS: Resources/Mac/AgentBridgeMac.entitlements
+        ENABLE_HARDENED_RUNTIME: "YES"
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        Debug:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: "-"
+        Release:
+          CODE_SIGN_STYLE: Automatic
+
+  CodexRelay:
+    type: application
+    platform: iOS
+    configFiles:
+      Debug: Config/RemoteRelay.xcconfig
+      Release: Config/RemoteRelay.xcconfig
+    deploymentTarget: "17.0"
+    sources:
+      - path: Apps/iOS
+      - path: Resources/iOS/Assets.xcassets
+        buildPhase: resources
+    dependencies:
+      - package: CodexWatchPackage
+        product: CodexWatchCore
+      - sdk: MultipeerConnectivity.framework
+      - sdk: WatchConnectivity.framework
+      - sdk: LocalAuthentication.framework
+      - target: CodexLiveActivity
+        embed: true
+      - target: CodexWatch
+        embed: true
+    settings:
+      base:
+        PRODUCT_NAME: Codex Relay
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.relay
+        INFOPLIST_FILE: Resources/iOS/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        INFOPLIST_KEY_CodexBrowserGatewayEnabled: "$(CODEX_BROWSER_GATEWAY_ENABLED)"
+        SUPPORTS_MACCATALYST: "NO"
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  CodexLiveActivity:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: Apps/LiveActivity
+    dependencies:
+      - package: CodexWatchPackage
+        product: CodexWatchCore
+      - sdk: ActivityKit.framework
+      - sdk: WidgetKit.framework
+    settings:
+      base:
+        PRODUCT_NAME: Codex Live Activity
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.relay.liveactivity
+        INFOPLIST_FILE: Resources/LiveActivity/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        APPLICATION_EXTENSION_API_ONLY: "YES"
+        SKIP_INSTALL: "YES"
+
+  CodexWatch:
+    type: application
+    platform: watchOS
+    configFiles:
+      Debug: Config/RemoteRelay.xcconfig
+      Release: Config/RemoteRelay.xcconfig
+    deploymentTarget: "10.0"
+    sources:
+      - path: Apps/Watch
+      - path: Resources/Watch/Assets.xcassets
+        buildPhase: resources
+    dependencies:
+      - package: CodexWatchPackage
+        product: CodexWatchCore
+      - sdk: WatchConnectivity.framework
+      - sdk: LocalAuthentication.framework
+      - sdk: WidgetKit.framework
+      - target: CodexWatchWidget
+        embed: true
+    settings:
+      base:
+        PRODUCT_NAME: Codex Watch
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.relay.watchkitapp
+        GENERATE_INFOPLIST_FILE: "NO"
+        INFOPLIST_FILE: Resources/Watch/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Codex Watch
+        INFOPLIST_KEY_CodexBrowserGatewayEnabled: "$(CODEX_BROWSER_GATEWAY_ENABLED)"
+        INFOPLIST_KEY_CodexRelayRoom: "$(CODEX_RELAY_ROOM)"
+        INFOPLIST_KEY_CodexRelaySecret: "$(CODEX_RELAY_SECRET)"
+        INFOPLIST_KEY_CodexRelayURL: "$(CODEX_RELAY_URL)"
+        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.sunzizai.codexwatch.relay
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown"
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: "YES"
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  CodexWatchWidget:
+    type: app-extension
+    platform: watchOS
+    configFiles:
+      Debug: Config/RemoteRelay.xcconfig
+      Release: Config/RemoteRelay.xcconfig
+    deploymentTarget: "10.0"
+    sources:
+      - path: Apps/WatchWidget
+    dependencies:
+      - package: CodexWatchPackage
+        product: CodexWatchCore
+      - sdk: WidgetKit.framework
+    settings:
+      base:
+        PRODUCT_NAME: Codex Watch Widget
+        PRODUCT_BUNDLE_IDENTIFIER: com.sunzizai.codexwatch.relay.watchkitapp.widget
+        INFOPLIST_FILE: Resources/WatchWidget/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        APPLICATION_EXTENSION_API_ONLY: "YES"
+        SKIP_INSTALL: "YES"
+
+schemes:
+  AgentBridgeMac:
+    build:
+      targets:
+        AgentBridgeMac: all
+    run:
+      config: Debug
+
+  CodexRelay:
+    build:
+      targets:
+        CodexRelay: all
+    run:
+      config: Debug
+
+  CodexWatch:
+    build:
+      targets:
+        CodexWatch: all
+    run:
+      config: Debug

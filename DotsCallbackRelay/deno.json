@@ -1,0 +1,16 @@
+{
+  "imports": {
+    "http-parser-js": "npm:http-parser-js@0.5.10",
+    "ipaddr.js": "npm:ipaddr.js@2.5.0",
+    "zod": "npm:zod@4.6.6"
+  },
+  "tasks": {
+    "check": "deno check main.ts src/client.ts test/*.ts",
+    "test": "deno test test/",
+    "test:native": "deno test --allow-net=127.0.0.1 test/deno-io.native.ts",
+    "start": "deno run --allow-net --allow-env=CALLBACK_RELAY_KEY,PORT main.ts"
+  },
+  "compilerOptions": {
+    "strict": true
+  }
+}

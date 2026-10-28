@@ -1,0 +1,8 @@
+// Copy locally through scripts/bootstrap.mjs. Never commit populated values.
+// xcconfig treats // as a comment; use /$(SLASH)/ for an HTTPS URL.
+SLASH = /
+CODEX_RELAY_URL =
+CODEX_RELAY_ROOM =
+CODEX_RELAY_SECRET =
+CODEX_DOTS_URL =
+CODEX_BROWSER_GATEWAY_ENABLED = NO
