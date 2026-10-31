@@ -4,7 +4,16 @@
 
 Codex Control 是一套 Mac、iPhone 和 Apple Watch 原生伴随应用。查看任务、跟进对话、处理审批，也可以直接与自己的 dot 聊天。
 
-[English](README.en.md) · [安装与配置](docs/SETUP.md) · [架构](docs/ARCHITECTURE.md) · [使用边界](docs/LIMITATIONS.md)
+[English](README.en.md) · [下载与安装](docs/INSTALL.md) · [详细配置](docs/SETUP.md) · [使用边界](docs/LIMITATIONS.md)
+
+## 下载与安装
+
+[下载 Mac 应用包](https://github.com/sunzizaisun/codex-control/releases/download/v0.2.1/Codex-Control-Mac-universal.zip) · [下载源码](https://github.com/sunzizaisun/codex-control/archive/refs/heads/main.zip)
+
+- **Mac**：解压应用包，将 `Agent Bridge.app` 拖入“应用程序”。支持 Apple Silicon 与 Intel。
+- **iPhone / Apple Watch**：下载源码并解压，双击 `Setup.command`，在 Xcode 工程里选择自己的签名团队与设备运行。
+
+Mac 包为临时签名，**未经苹果公证**，系统可能阻止打开；不要关闭系统安全保护。手机／手表的免费安装需要完整 Xcode、Node.js 24+ 和 XcodeGen。首次使用仍需配置自己的服务。见 [安装说明](docs/INSTALL.md)。
 
 ## 功能
 
@@ -25,17 +34,14 @@ Codex Control 是一套 Mac、iPhone 和 Apple Watch 原生伴随应用。查看
 
 这是独立社区项目，不隶属于 OpenAI、Apple、Cloudflare 或 Deno。软件不内置公共后端、账号凭据或个人签名资料；请连接自己的账号并部署自己的服务。
 
-## 从源码运行
+## 终端方式（可选）
 
 需要完整 Xcode（含所需平台 SDK）、Swift 6、[XcodeGen](https://github.com/yonaskolb/XcodeGen)，云端组件使用 Node.js 24+ 和 Deno 2。
 
 ```sh
 git clone https://github.com/sunzizaisun/codex-control.git
 cd codex-control
-node scripts/bootstrap.mjs
-node scripts/generate-icons.mjs
-xcodegen generate
-open CodexWatch.xcodeproj
+node scripts/prepare-xcode.mjs
 ```
 
 在 Xcode 中选择自己的开发团队及唯一 Bundle ID。先使用模拟器预览；真机需要自行配置签名、系统授权及配对。详细步骤见 [安装与配置](docs/SETUP.md)。

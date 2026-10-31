@@ -1,5 +1,7 @@
 # 安装与自托管
 
+只想先安装应用？请先看 [三步安装入口](INSTALL.md)。本页保留完整的自托管配置。
+
 ## 1. 原生应用
 
 安装完整 Xcode、需要的平台 SDK 和 XcodeGen。基础目标为 macOS 13、iOS 17、watchOS 10；Live Activity 扩展目标为 iOS 18。新系统使用可用的玻璃材质，旧系统采用系统回退样式。
@@ -7,10 +9,7 @@
 在仓库根目录执行：
 
 ```sh
-node scripts/bootstrap.mjs
-node scripts/generate-icons.mjs
-xcodegen generate
-open CodexWatch.xcodeproj
+node scripts/prepare-xcode.mjs
 ```
 
 `bootstrap` 只创建缺失的空配置，不覆盖已有配置，不连接云端、不读取 Keychain。图标脚本生成本项目自己的图形，不使用 OpenAI 图标。Xcode 工程由 `project.yml` 生成，不分发个人工程或签名资料。

@@ -2,10 +2,11 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { chmod, lstat, mkdir, mkdtemp, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { tmpdir } from 'node:os';
 import { copyVerifiedSnapshotFile, prepareNativeSnapshot } from '../lib/prepare-native-snapshot.mjs';
 
 async function fixture() {
-  const root = await mkdtemp('/private/tmp/native-prep-fixture.');
+  const root = await mkdtemp(path.join(tmpdir(), 'native-prep-fixture.'));
   for (const name of ['Apps', 'Sources', 'Tests', 'Resources', 'Config', 'CodexWatch.xcodeproj', 'scripts']) await mkdir(path.join(root, name));
   await writeFile(path.join(root, 'Package.swift'), 'package fixture');
   await writeFile(path.join(root, 'Sources/Fixture.swift'), '中文🦦');
@@ -26,7 +27,7 @@ test('native snapshot preserves exact bytes, executable mode and provenance', as
   const root = await fixture(); let snapshot;
   try {
     await chmod(path.join(root, 'Sources/Fixture.swift'), 0o755);
-    snapshot = await prepareNativeSnapshot(root, { findPlaceholders: () => Buffer.alloc(0) });
+    snapshot = await prepareNativeSnapshot(root, { findPlaceholders: () => Buffer.alloc(0), temporaryRoot: tmpdir() });
     assert.equal(snapshot.currentFiles, 5); assert.equal(snapshot.inheritedFiles, 0);
     assert.equal(await readFile(path.join(snapshot.destination, 'Sources/Fixture.swift'), 'utf8'), '中文🦦');
     assert.equal((await lstat(path.join(snapshot.destination, 'Sources/Fixture.swift'))).mode & 0o777, 0o755);
@@ -37,7 +38,7 @@ test('native snapshot preserves exact bytes, executable mode and provenance', as
     assert.equal(manifest.files.length, 5); assert.equal(manifest.originalFilesModified, false);
   } finally { await rm(root, { recursive: true, force: true }); if (snapshot) await rm(snapshot.destination, { recursive: true, force: true }); }
 });
-test('explicit fallback marks inherited bytes but cannot resurrect deleted files', async () => {
+test('explicit fallback marks inherited bytes but cannot resurrect deleted files', { skip: process.platform !== 'darwin' }, async () => {
   const root = await fixture(), fallback = await mkdtemp('/private/tmp/codex-simulator-source.'); let snapshot;
   try {
     await mkdir(path.join(fallback, 'Sources'));
@@ -59,6 +60,6 @@ test('native snapshot rejects symlinks instead of copying unknown targets', asyn
   const root = await fixture();
   try {
     await symlink('../Package.swift', path.join(root, 'Sources/Link.swift'));
-    await assert.rejects(prepareNativeSnapshot(root, { findPlaceholders: () => Buffer.alloc(0) }), /symlink_requires_review/);
+    await assert.rejects(prepareNativeSnapshot(root, { findPlaceholders: () => Buffer.alloc(0), temporaryRoot: tmpdir() }), /symlink_requires_review/);
   } finally { await rm(root, { recursive: true, force: true }); }
 });

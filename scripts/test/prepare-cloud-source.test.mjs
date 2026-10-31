@@ -6,6 +6,9 @@ import { lstat, mkdir, mkdtemp, readFile, rm, symlink, writeFile } from 'node:fs
 import path from 'node:path';
 
 const execute = promisify(execFile);
+// These fixtures exercise macOS iCloud dataless-file recovery and BSD find.
+// Do not pretend GNU find supplies the same placeholder semantics.
+const macTest = process.platform === 'darwin' ? test : test.skip;
 async function fixture(version = '1.0.0') {
   const root = await mkdtemp('/private/tmp/cloud-prep-fixture.');
   const fallback = await mkdtemp('/private/tmp/dot-cloud-source.');
@@ -28,7 +31,7 @@ async function run(f) {
   const result = await execute(process.execPath, [path.join(f.root, 'scripts/prepare-cloud-source.mjs'), f.fallback, f.dependencies], { timeout: 10_000 });
   return JSON.parse(result.stdout);
 }
-test('cloud preparation cannot resurrect retired fallback files and copies current bytes', async () => {
+macTest('cloud preparation cannot resurrect retired fallback files and copies current bytes', async () => {
   const f = await fixture(); let result;
   try {
     result = await run(f);
@@ -42,12 +45,12 @@ test('cloud preparation cannot resurrect retired fallback files and copies curre
     if (result) await rm(result.candidate, { recursive: true, force: true });
   }
 });
-test('cloud preparation rejects a changed dependency version', async () => {
+macTest('cloud preparation rejects a changed dependency version', async () => {
   const f = await fixture('2.0.0');
   try { await assert.rejects(run(f), error => /dependency_version_mismatch/.test(error.stderr)); }
   finally { await rm(f.root, { recursive: true, force: true }); await rm(f.fallback, { recursive: true, force: true }); }
 });
-test('cloud preparation rejects source symlinks rather than copying unknown targets', async () => {
+macTest('cloud preparation rejects source symlinks rather than copying unknown targets', async () => {
   const f = await fixture();
   try {
     await symlink('../package.json', path.join(f.root, 'DotsGateway/src/alias.ts'));

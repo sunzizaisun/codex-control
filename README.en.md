@@ -2,7 +2,16 @@
 
 A native Mac, iPhone, and Apple Watch companion for Codex and dot.
 
-[简体中文](README.md) · [Setup](docs/SETUP.md) · [Architecture](docs/ARCHITECTURE.md) · [Limitations](docs/LIMITATIONS.md)
+[简体中文](README.md) · [Download & install](docs/INSTALL.md) · [Configuration](docs/SETUP.md) · [Limitations](docs/LIMITATIONS.md)
+
+## Download & install
+
+[Mac app ZIP](https://github.com/sunzizaisun/codex-control/releases/download/v0.2.1/Codex-Control-Mac-universal.zip) · [Source ZIP](https://github.com/sunzizaisun/codex-control/archive/refs/heads/main.zip)
+
+- **Mac:** extract the app ZIP and move `Agent Bridge.app` to Applications. Supports Apple Silicon and Intel.
+- **iPhone / Apple Watch:** extract the source ZIP, double-click `Setup.command`, then choose your own signing team and device in Xcode.
+
+The Mac package is ad-hoc signed, **not Apple-notarized**, and may be blocked by macOS. Do not disable system security. Free iPhone/Watch installation requires full Xcode, Node.js 24+, and XcodeGen. Configure your own backend before connecting. See [installation details](docs/INSTALL.md).
 
 Follow tasks from your wrist, continue conversations, review approvals, answer structured questions, and chat with your dot across devices. The interface uses SwiftUI, native watchOS input, language and appearance preferences, and platform widgets/activity components.
 
@@ -26,10 +35,7 @@ Install full Xcode with the desired platform SDKs and XcodeGen. Swift 6 is requi
 ```sh
 git clone https://github.com/sunzizaisun/codex-control.git
 cd codex-control
-node scripts/bootstrap.mjs
-node scripts/generate-icons.mjs
-xcodegen generate
-open CodexWatch.xcodeproj
+node scripts/prepare-xcode.mjs
 ```
 
 Choose your own signing team and unique Bundle IDs. Configure your own endpoints and secrets using [Setup](docs/SETUP.md). Run the isolated checks in [Testing](docs/TESTING.md) before connecting accounts or installing on physical devices.

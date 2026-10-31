@@ -1067,12 +1067,15 @@ private actor SnapshotPublicationProbe {
     #!/bin/sh
     IFS= read -r request
     printf '%s\\n' '{"id":1,"result":{}}'
+    IFS= read -r initialized
     i=0
     while [ "$i" -lt 200 ]; do
       printf '{"method":"test/ordered","params":{"index":%s}}\\n' "$i"
       i=$((i + 1))
     done
-    sleep 1
+    # Keep stdout alive until the parent closes stdin. A fixed one-second
+    # exit can cancel buffered handlers on a loaded CI runner.
+    IFS= read -r finished
     """
     try Data(script.utf8).write(to: scriptURL)
     try FileManager.default.setAttributes(
