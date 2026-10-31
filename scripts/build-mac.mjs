@@ -43,6 +43,15 @@ export function verifyArchitectures(app, { env = process.env, run = execFileSync
   if (JSON.stringify(archs) !== JSON.stringify(['arm64', 'x86_64'])) throw Error('package_is_not_universal');
 }
 
+export function validateArchiveEntries(list) {
+  const entries = list.trim().split('\n');
+  if (!entries.length || entries.some(entry => entry.startsWith('/') || entry.split('/').some(part =>
+    part === '..' || part === '__MACOSX' || part === '.DS_Store' || part.startsWith('._')
+    || part === 'RemoteRelay.xcconfig' || /\.(?:p12|p8|pem|key|mobileprovision|provisionprofile)$/.test(part)))) {
+    throw Error('unexpected_package_entry');
+  }
+}
+
 export async function buildMac({ root = projectRoot, reveal = true,
   env = developmentEnvironment(), run = execFileSync } = {}) {
   const scratch = await mkdtemp(path.join(tmpdir(), 'codex-mac-build-'));
@@ -69,7 +78,7 @@ export async function packageMac({ app, root = projectRoot, reveal = true,
   await mkdir(output); // Refuse to overwrite an existing package.
   const bundle = path.join(output, 'Codex-Control-Mac');
   await mkdir(bundle);
-  run('/usr/bin/ditto', [app, path.join(bundle, 'Agent Bridge.app')], { env, stdio: 'inherit' });
+  run('/usr/bin/ditto', ['--norsrc', '--noextattr', '--noacl', app, path.join(bundle, 'Agent Bridge.app')], { env, stdio: 'inherit' });
   for (const name of ['LICENSE', 'THIRD_PARTY_NOTICES.md']) await cp(path.join(root, name), path.join(bundle, name));
   await writeFile(path.join(bundle, 'READ-ME.txt'), [
     'Codex Control — Mac source build (Apple Silicon + Intel)',
@@ -85,7 +94,10 @@ export async function packageMac({ app, root = projectRoot, reveal = true,
     '',
   ].join('\n'));
   const archive = path.join(output, 'Codex-Control-Mac-universal.zip');
-  run('/usr/bin/ditto', ['-c', '-k', '--sequesterRsrc', '--keepParent', bundle, archive], { env, stdio: 'inherit' });
+  // Distribute file contents, not machine-specific Finder/AppleDouble metadata.
+  run('/usr/bin/ditto', ['-c', '-k', '--norsrc', '--noextattr', '--noacl', '--keepParent', bundle, archive], { env, stdio: 'inherit' });
+  run('/usr/bin/unzip', ['-tqq', archive], { env, stdio: 'inherit' });
+  validateArchiveEntries(run('/usr/bin/unzip', ['-Z', '-1', archive], { env, encoding: 'utf8' }));
   const checksum = createHash('sha256').update(await readFile(archive)).digest('hex');
   await writeFile(path.join(output, 'SHA256SUMS.txt'), `${checksum}  ${path.basename(archive)}\n`);
   console.log(`Package ready: ${archive}\nNo app installed or launched. Not notarized.`);

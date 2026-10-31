@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { developmentEnvironment, prepareXcode } from '../prepare-xcode.mjs';
-import { copyBuildSource, verifyBlankConfiguration, verifyArchitectures } from '../build-mac.mjs';
+import { copyBuildSource, verifyBlankConfiguration, verifyArchitectures, validateArchiveEntries } from '../build-mac.mjs';
 
 test('setup uses full Xcode per process without changing the system selection', () => {
   const calls = [];
@@ -111,5 +111,13 @@ test('architecture verification parses lipo output and refuses single-architectu
   } });
   for (const output of ['arm64', 'x86_64', '', 'arm64 x86_64 extra']) {
     assert.throws(() => verifyArchitectures(app, { run: () => output }), /package_is_not_universal/);
+  }
+});
+
+test('archive inspection rejects machine metadata, private configuration, signing material and escaping paths', () => {
+  validateArchiveEntries('Codex-Control-Mac/Agent Bridge.app/Contents/MacOS/Agent Bridge\n');
+  for (const entry of ['__MACOSX/._file', 'App/.DS_Store', 'App/._LICENSE', 'App/RemoteRelay.xcconfig',
+    'App/key.p12', 'App/profile.mobileprovision', '../outside', '/absolute']) {
+    assert.throws(() => validateArchiveEntries(entry), /unexpected_package_entry/);
   }
 });
