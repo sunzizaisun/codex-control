@@ -9,9 +9,9 @@ A native Mac, iPhone, and Apple Watch companion for Codex and dot.
 [Mac app ZIP](https://github.com/sunzizaisun/codex-control/releases/download/v0.2.1/Codex-Control-Mac-universal.zip) · [Source ZIP](https://github.com/sunzizaisun/codex-control/archive/refs/heads/main.zip)
 
 - **Mac:** extract the app ZIP and move `Agent Bridge.app` to Applications. Supports Apple Silicon and Intel.
-- **iPhone / Apple Watch:** extract the source ZIP, double-click `Setup.command`, then choose your own signing team and device in Xcode.
+- **iPhone / Apple Watch:** extract the source ZIP, open `CodexWatch.xcodeproj`, then choose your own signing team and device in Xcode.
 
-The Mac package is ad-hoc signed, **not Apple-notarized**, and may be blocked by macOS. Do not disable system security. Free iPhone/Watch installation requires full Xcode, Node.js 24+, and XcodeGen. Configure your own backend before connecting. See [installation details](docs/INSTALL.md).
+The Mac package is ad-hoc signed, **not Apple-notarized**, and may be blocked by macOS. Do not disable system security. Free iPhone/Watch installation only requires full Xcode, with no command-line setup tools. Configure your own backend before connecting. See [installation details](docs/INSTALL.md).
 
 Follow tasks from your wrist, continue conversations, review approvals, answer structured questions, and chat with your dot across devices. The interface uses SwiftUI, native watchOS input, language and appearance preferences, and platform widgets/activity components.
 

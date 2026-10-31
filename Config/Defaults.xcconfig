@@ -1,0 +1,8 @@
+// Public empty defaults. Private overrides are optional and remain ignored.
+SLASH = /
+CODEX_RELAY_URL =
+CODEX_RELAY_ROOM =
+CODEX_RELAY_SECRET =
+CODEX_DOTS_URL =
+CODEX_BROWSER_GATEWAY_ENABLED = NO
+#include? "RemoteRelay.xcconfig"

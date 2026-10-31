@@ -7,12 +7,12 @@
 **iPhone / Apple Watch（免费方式）**：
 
 1. [下载源码 ZIP](https://github.com/sunzizaisun/codex-control/archive/refs/heads/main.zip)，解压。
-2. 双击 `Setup.command`，自动生成并打开 Xcode 工程。
+2. 双击 `CodexWatch.xcodeproj`，直接打开已生成的 Xcode 工程；不需要 Node.js 或 XcodeGen。
 3. 选择 `CodexRelay`，在 Signing & Capabilities 中选择自己的 Team，再选择自己的设备运行。该 iPhone 应用包含 Watch 伴随应用。需为各目标设置自己的唯一 Bundle ID，并保持 companion ID 一致，详见 [配置说明](SETUP.md)。
 
-如需自行构建 Mac 版，双击源码中的 `Build Mac.command`，完成后自动打开输出文件夹。脚本不会安装、替换旧版或启动应用。
+如需自行构建 Mac 版，双击源码中的 `Build Mac.command`，完成后自动打开输出文件夹。脚本不会安装、替换旧版或启动应用。需要重新生成 Xcode 工程时才使用 `Setup.command`。
 
-源码构建需要 Mac、完整 Xcode、Node.js 24+、XcodeGen 2.45.4+。脚本会检查依赖；不会自动安装工具、运行 `sudo`、改动全局 Xcode 路径或关闭系统安全保护。如果提示缺少 XcodeGen，可在已安装 Homebrew 的终端执行 `brew install xcodegen`。
+直接打开随附工程只需要 Mac 和完整 Xcode。使用两个辅助脚本时还需要 Node.js 24+、XcodeGen 2.45.4+。脚本会检查依赖；不会自动安装工具、运行 `sudo`、改动全局 Xcode 路径或关闭系统安全保护。如果提示缺少 XcodeGen，可在已安装 Homebrew 的终端执行 `brew install xcodegen`。
 
 如果系统不允许双击脚本，可在解压后的目录用终端执行 `node scripts/prepare-xcode.mjs` 或 `node scripts/build-mac.mjs`，不需要修改安全设置。
 
@@ -32,9 +32,9 @@
 Download the [Mac app ZIP](https://github.com/sunzizaisun/codex-control/releases/download/v0.2.1/Codex-Control-Mac-universal.zip) or the [source ZIP](https://github.com/sunzizaisun/codex-control/archive/refs/heads/main.zip).
 
 - **Mac:** extract the app ZIP and move `Agent Bridge.app` to Applications. Xcode is not required for this download. To build it yourself, double-click `Build Mac.command` in the source download; outputs go into `dist`. Nothing is installed, replaced or launched automatically.
-- **iPhone / Watch:** double-click `Setup.command`. In the generated Xcode project select `CodexRelay`, choose your own signing team and device, and use unique, consistent bundle/companion identifiers. See [Setup](SETUP.md).
+- **iPhone / Watch:** open the included `CodexWatch.xcodeproj` directly in Xcode, select `CodexRelay`, choose your own signing team and device, and use unique, consistent bundle/companion identifiers. No Node.js or XcodeGen is required for this route. See [Setup](SETUP.md).
 
-Source-build requirements: macOS, full Xcode, Node.js 24+, XcodeGen 2.45.4+. The helpers do not install dependencies or change global settings. Terminal alternatives are `node scripts/prepare-xcode.mjs` and `node scripts/build-mac.mjs`; add `--no-open` for headless use.
+The included project needs full Xcode. Optional build/regeneration helpers additionally need Node.js 24+ and XcodeGen 2.45.4+; they do not install dependencies or change global settings. Terminal alternatives are `node scripts/prepare-xcode.mjs` and `node scripts/build-mac.mjs`; add `--no-open` for headless use.
 
 The Mac package is ad-hoc signed, **not Apple-notarized**, and has blank backend configuration. macOS may block it. A frictionless public Mac download needs Developer ID signing and notarization. iPhone and Watch link-based installation requires an authorized distribution method such as TestFlight; the free Xcode route may need periodic re-signing. Never disable system security to install this project.
 

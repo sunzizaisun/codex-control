@@ -34,8 +34,8 @@ targets:
     type: application
     platform: macOS
     configFiles:
-      Debug: Config/RemoteRelay.xcconfig
-      Release: Config/RemoteRelay.xcconfig
+      Debug: Config/Defaults.xcconfig
+      Release: Config/Defaults.xcconfig
     deploymentTarget: "13.0"
     sources:
       - path: Apps/Mac
@@ -76,8 +76,8 @@ targets:
     type: application
     platform: iOS
     configFiles:
-      Debug: Config/RemoteRelay.xcconfig
-      Release: Config/RemoteRelay.xcconfig
+      Debug: Config/Defaults.xcconfig
+      Release: Config/Defaults.xcconfig
     deploymentTarget: "17.0"
     sources:
       - path: Apps/iOS
@@ -129,8 +129,8 @@ targets:
     type: application
     platform: watchOS
     configFiles:
-      Debug: Config/RemoteRelay.xcconfig
-      Release: Config/RemoteRelay.xcconfig
+      Debug: Config/Defaults.xcconfig
+      Release: Config/Defaults.xcconfig
     deploymentTarget: "10.0"
     sources:
       - path: Apps/Watch
@@ -166,8 +166,8 @@ targets:
     type: app-extension
     platform: watchOS
     configFiles:
-      Debug: Config/RemoteRelay.xcconfig
-      Release: Config/RemoteRelay.xcconfig
+      Debug: Config/Defaults.xcconfig
+      Release: Config/Defaults.xcconfig
     deploymentTarget: "10.0"
     sources:
       - path: Apps/WatchWidget

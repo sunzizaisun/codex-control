@@ -1,0 +1,1138 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01705E8B3BE1066A822FEAAE /* CodexRelayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB519B4ACB973DA06485564B /* CodexRelayApp.swift */; };
+		07FF962056A262E7E9A95418 /* CodexWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 81B6C1733E9680377C15F1B5 /* CodexWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		15489062E7709A03A73FD4A8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96582CDF30667D056F83C9E4 /* WidgetKit.framework */; };
+		189F2B39B327166D10EDA608 /* CodexWatchCore in Frameworks */ = {isa = PBXBuildFile; productRef = CBBCF6D03A8E40F05E3ACB4A /* CodexWatchCore */; };
+		2684CC3905C06E4CF38A515E /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779F18C806EF4126A8C47592 /* LocalAuthentication.framework */; };
+		290CEA525B03921F9BD47175 /* ChromeChatExtensionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23C0D34AB318A95D91682A /* ChromeChatExtensionController.swift */; };
+		31BBF518C91A874A9E99BCEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E4DEF2B31151C89F7A29DB /* Assets.xcassets */; };
+		405F985816B34EEBCF10A397 /* CodexWatchCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE2A85E2CCA1F6F35C2DA47 /* CodexWatchCore */; };
+		40EC5A0998FDE0E19F6ABA7D /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86D352F61A741DC09D50D9 /* LiveActivityManager.swift */; };
+		4A0BA9A6895D1030BF18088C /* AgentBridgeMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA83AB4C9CFCBEA69223AA2E /* AgentBridgeMacApp.swift */; };
+		5B8BCC5A7B505FFDD696FE03 /* MacBridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF738D21862FB067B05262E5 /* MacBridgeViewModel.swift */; };
+		5C1BDA26EEC46AB98D3B3A6C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BABC71704A305AA52BC216 /* MultipeerConnectivity.framework */; };
+		5C8CD3478444F95D0FEE6824 /* CodexLiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57352E1B5FD738EC1D2019C1 /* CodexLiveActivityBundle.swift */; };
+		5CAC8A1271E9C4F9D540F30B /* LiquidGlassTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA112499C7885FBF537AE8 /* LiquidGlassTheme.swift */; };
+		5E19A7A9E409B9DC5AC0A373 /* WatchBackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE83F454E9BD16AAF47FF1 /* WatchBackgroundRefresh.swift */; };
+		606CB784316341459E3DF284 /* PhoneRelayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2DD2ECAB254834301628 /* PhoneRelayController.swift */; };
+		727A9A44AEFCD28028049CA9 /* LiquidGlassTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374AA23F97E4508189581EDC /* LiquidGlassTheme.swift */; };
+		73A2CB2E9380E7ED72088959 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96582CDF30667D056F83C9E4 /* WidgetKit.framework */; };
+		766C8065FF45879DD3C5CD97 /* CodexBridgeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 174FB7C64B98917848E2E25E /* CodexBridgeKit */; };
+		7BE5107B3524F27D1C18137A /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F71FADD716B1843E0B83215 /* WatchConnectivity.framework */; };
+		81837E9E49ACCC2B90D52956 /* WatchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B80B2675B95F15F16A8822 /* WatchSettingsView.swift */; };
+		832D24DCB27873B15DCD7549 /* WatchRelayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161873E46FD5828CC50814F /* WatchRelayController.swift */; };
+		8542A70E5DD554D411F2FD82 /* CodexWatchCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81CC77EA83AA0257A9F0F933 /* CodexWatchCore */; };
+		88DDD978C7273A36D7B98DCC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A71562E72687CE91A63E0CCB /* Localizable.xcstrings */; };
+		8B955DBD51726736C60D211E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50CB12563875F948F9B4DAD /* Assets.xcassets */; };
+		8D0E3F0B1413E84293EAE620 /* CodexLiveActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 82DA2FBB55C578DEA96876F6 /* CodexLiveActivity.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		902743C335911977D00AEE57 /* CodexWatchCore in Frameworks */ = {isa = PBXBuildFile; productRef = B9942FCFB4952EAD7960AC6E /* CodexWatchCore */; };
+		99CE2023AE22CAAADC15455A /* LiquidGlassTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3ED9FC0D5C944E5A915A6 /* LiquidGlassTheme.swift */; };
+		9D9A6789E4DE805162F2FC7A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779F18C806EF4126A8C47592 /* LocalAuthentication.framework */; };
+		A0FD82EB96C20B9B6A9A2B8F /* CodexWatchCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0963CC672EE9C56EA62F7124 /* CodexWatchCore */; };
+		A6D2E8A4FA7E6EADDEEA4EBF /* WatchDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137403E1678083C46AFA4380 /* WatchDashboardView.swift */; };
+		A8399F8513713D94A145C7D5 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFC288F1554C9BED3D3AB1 /* Network.framework */; };
+		AE00F7A53237B5B09E8EF8EF /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5024BC96668EF623AD1AC2F /* MacSettingsView.swift */; };
+		AE3ED0E5AF8D874C129C72E4 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BABC71704A305AA52BC216 /* MultipeerConnectivity.framework */; };
+		AE61D32A5B699037EBB3B0F9 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F71FADD716B1843E0B83215 /* WatchConnectivity.framework */; };
+		AE7A908A8FDC4751A7F2B085 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96582CDF30667D056F83C9E4 /* WidgetKit.framework */; };
+		AFB6BBF8B36103C863C20E2B /* CodexWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DDEDC59110177F7CA4D46F /* CodexWatchApp.swift */; };
+		B04F997AD163481A3447D52F /* MacBridgeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA8D34514D34E1FDFC876C /* MacBridgeMenuView.swift */; };
+		B494989CACA767C3EC082D11 /* ActivityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34702C660C67DF9E6547425 /* ActivityKit.framework */; };
+		B95867429713679986B0F648 /* PhoneDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BECEE48660000580369ECA3 /* PhoneDashboardView.swift */; };
+		C07F5A22B55282DD5FE6196F /* ChatGPTDesktopThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45257D9604D7C6A4266D47C /* ChatGPTDesktopThreadController.swift */; };
+		C62BECA0DE44C6870562658F /* CodexWatchWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1B93B2ACF32554D9BBA3EB18 /* CodexWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9B5596C8C736450EFE7C4AF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 91A9E0ADAA4AE04FDDE5E744 /* Localizable.xcstrings */; };
+		CA4BB9C3BF433141418CB60E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5F0907526FD2447B216E6E4E /* Localizable.xcstrings */; };
+		CA5519399515DA9653FB8A8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1219A216F7B3788E1622609 /* Assets.xcassets */; };
+		DE61C02842AB40A5350167C3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779F18C806EF4126A8C47592 /* LocalAuthentication.framework */; };
+		ED69AD406D702C498D5CF33B /* WatchApprovalGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE148AFE2E99C1660B1E3DC /* WatchApprovalGate.swift */; };
+		EDC4361789B6804EAA135A8E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE68B587EDD08E3D11E36AD6 /* IOKit.framework */; };
+		F634C503E4C967158BB421BB /* PhoneSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCEC23CA15F741998ADC781 /* PhoneSettingsView.swift */; };
+		FFC602D75F85CCB5D89C1C38 /* CodexWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDA327CA5D51EBBDECCFAB /* CodexWatchWidget.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		894DB63FF049DFEC5E4852C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8203A90F3D38CFD6E8CAEB51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7394805E971C063A2464F2F;
+			remoteInfo = CodexWatchWidget;
+		};
+		B7032B04AC78D65E75F0E715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8203A90F3D38CFD6E8CAEB51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B31F9DC2A5B56A2CBBB52616;
+			remoteInfo = CodexLiveActivity;
+		};
+		EDF43FFCACCF08F2F052A7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8203A90F3D38CFD6E8CAEB51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C269D1F7F8C72CFFB4C6721;
+			remoteInfo = CodexWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10A0490C346C2C796688F0A6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8D0E3F0B1413E84293EAE620 /* CodexLiveActivity.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		249BB80FB9CFB5ED8C0FADE2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				07FF962056A262E7E9A95418 /* CodexWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB35C2F773BF2A3959FA542 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C62BECA0DE44C6870562658F /* CodexWatchWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08BABC71704A305AA52BC216 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		0BECEE48660000580369ECA3 /* PhoneDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDashboardView.swift; sourceTree = "<group>"; };
+		0F71FADD716B1843E0B83215 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		137403E1678083C46AFA4380 /* WatchDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDashboardView.swift; sourceTree = "<group>"; };
+		1B93B2ACF32554D9BBA3EB18 /* CodexWatchWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CodexWatchWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D2514A8F77CA12CD078D7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		22265027BF81E166390507BD /* Defaults.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Defaults.xcconfig; sourceTree = "<group>"; };
+		283C98B1C1F337A4B31A4F9F /* CodexWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodexWatch.entitlements; sourceTree = "<group>"; };
+		354D2DD2ECAB254834301628 /* PhoneRelayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRelayController.swift; sourceTree = "<group>"; };
+		361B4938207FE80CC57D6367 /* CodexRelay.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CodexRelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		374AA23F97E4508189581EDC /* LiquidGlassTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassTheme.swift; sourceTree = "<group>"; };
+		3CE148AFE2E99C1660B1E3DC /* WatchApprovalGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchApprovalGate.swift; sourceTree = "<group>"; };
+		4941C96645C887470B210EE5 /* AgentBridgeMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AgentBridgeMac.entitlements; sourceTree = "<group>"; };
+		50395578DAD1EF8B8C4AADE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		57352E1B5FD738EC1D2019C1 /* CodexLiveActivityBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexLiveActivityBundle.swift; sourceTree = "<group>"; };
+		57AFC288F1554C9BED3D3AB1 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		5F0907526FD2447B216E6E4E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		607544E396E3B1365F2C14E2 /* AgentBridgeMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgentBridgeMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C1663FC71386BCA23048F36 /* CodexWatchWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodexWatchWidget.entitlements; sourceTree = "<group>"; };
+		72BA8D34514D34E1FDFC876C /* MacBridgeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacBridgeMenuView.swift; sourceTree = "<group>"; };
+		779F18C806EF4126A8C47592 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		77B80B2675B95F15F16A8822 /* WatchSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSettingsView.swift; sourceTree = "<group>"; };
+		7CC3ED9FC0D5C944E5A915A6 /* LiquidGlassTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassTheme.swift; sourceTree = "<group>"; };
+		7D6B9A0FF00699004D057DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7DCEC23CA15F741998ADC781 /* PhoneSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettingsView.swift; sourceTree = "<group>"; };
+		81B6C1733E9680377C15F1B5 /* CodexWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodexWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DA2FBB55C578DEA96876F6 /* CodexLiveActivity.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CodexLiveActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		85DDA327CA5D51EBBDECCFAB /* CodexWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexWatchWidget.swift; sourceTree = "<group>"; };
+		8A86BAFB6E9CCB3D43AB1B31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		91A9E0ADAA4AE04FDDE5E744 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		96582CDF30667D056F83C9E4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		9A23C0D34AB318A95D91682A /* ChromeChatExtensionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeChatExtensionController.swift; sourceTree = "<group>"; };
+		A6EA112499C7885FBF537AE8 /* LiquidGlassTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassTheme.swift; sourceTree = "<group>"; };
+		A71562E72687CE91A63E0CCB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AB86D352F61A741DC09D50D9 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		AF738D21862FB067B05262E5 /* MacBridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacBridgeViewModel.swift; sourceTree = "<group>"; };
+		B6BBCF0C732BB7B8539CB353 /* codex-control */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "codex-control"; path = .; sourceTree = SOURCE_ROOT; };
+		C5BE83F454E9BD16AAF47FF1 /* WatchBackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBackgroundRefresh.swift; sourceTree = "<group>"; };
+		CA83AB4C9CFCBEA69223AA2E /* AgentBridgeMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentBridgeMacApp.swift; sourceTree = "<group>"; };
+		D161873E46FD5828CC50814F /* WatchRelayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRelayController.swift; sourceTree = "<group>"; };
+		D3BFC7496D7859E9479DEA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D5024BC96668EF623AD1AC2F /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		D50CB12563875F948F9B4DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D94A21A64490E74BA1D16076 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		DB519B4ACB973DA06485564B /* CodexRelayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexRelayApp.swift; sourceTree = "<group>"; };
+		E1219A216F7B3788E1622609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E34702C660C67DF9E6547425 /* ActivityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActivityKit.framework; path = System/Library/Frameworks/ActivityKit.framework; sourceTree = SDKROOT; };
+		E45257D9604D7C6A4266D47C /* ChatGPTDesktopThreadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTDesktopThreadController.swift; sourceTree = "<group>"; };
+		E6DDEDC59110177F7CA4D46F /* CodexWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexWatchApp.swift; sourceTree = "<group>"; };
+		F3E4DEF2B31151C89F7A29DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8DF119AE793973561F80B40 /* CodexRelay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodexRelay.entitlements; sourceTree = "<group>"; };
+		FE68B587EDD08E3D11E36AD6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BC742A0E90C39D655A6C266 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				902743C335911977D00AEE57 /* CodexWatchCore in Frameworks */,
+				5C1BDA26EEC46AB98D3B3A6C /* MultipeerConnectivity.framework in Frameworks */,
+				7BE5107B3524F27D1C18137A /* WatchConnectivity.framework in Frameworks */,
+				DE61C02842AB40A5350167C3 /* LocalAuthentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51C151F9569198F218F31E33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				405F985816B34EEBCF10A397 /* CodexWatchCore in Frameworks */,
+				73A2CB2E9380E7ED72088959 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7227E084BE5DF7541562BDDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0FD82EB96C20B9B6A9A2B8F /* CodexWatchCore in Frameworks */,
+				766C8065FF45879DD3C5CD97 /* CodexBridgeKit in Frameworks */,
+				AE3ED0E5AF8D874C129C72E4 /* MultipeerConnectivity.framework in Frameworks */,
+				A8399F8513713D94A145C7D5 /* Network.framework in Frameworks */,
+				2684CC3905C06E4CF38A515E /* LocalAuthentication.framework in Frameworks */,
+				EDC4361789B6804EAA135A8E /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC43DF6D40D58E9D3D58BC4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8542A70E5DD554D411F2FD82 /* CodexWatchCore in Frameworks */,
+				B494989CACA767C3EC082D11 /* ActivityKit.framework in Frameworks */,
+				15489062E7709A03A73FD4A8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF288626B9AA6EEFE4BB6C2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189F2B39B327166D10EDA608 /* CodexWatchCore in Frameworks */,
+				AE61D32A5B699037EBB3B0F9 /* WatchConnectivity.framework in Frameworks */,
+				9D9A6789E4DE805162F2FC7A /* LocalAuthentication.framework in Frameworks */,
+				AE7A908A8FDC4751A7F2B085 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16B50F0338623ED3F2D833F4 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				E1219A216F7B3788E1622609 /* Assets.xcassets */,
+				283C98B1C1F337A4B31A4F9F /* CodexWatch.entitlements */,
+				8A86BAFB6E9CCB3D43AB1B31 /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		315B384475E2D427A879BE8A /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				CA83AB4C9CFCBEA69223AA2E /* AgentBridgeMacApp.swift */,
+				E45257D9604D7C6A4266D47C /* ChatGPTDesktopThreadController.swift */,
+				9A23C0D34AB318A95D91682A /* ChromeChatExtensionController.swift */,
+				A6EA112499C7885FBF537AE8 /* LiquidGlassTheme.swift */,
+				91A9E0ADAA4AE04FDDE5E744 /* Localizable.xcstrings */,
+				72BA8D34514D34E1FDFC876C /* MacBridgeMenuView.swift */,
+				AF738D21862FB067B05262E5 /* MacBridgeViewModel.swift */,
+				D5024BC96668EF623AD1AC2F /* MacSettingsView.swift */,
+				3CE148AFE2E99C1660B1E3DC /* WatchApprovalGate.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		34D5B9117418E2EC27FDBA7A /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				E6DDEDC59110177F7CA4D46F /* CodexWatchApp.swift */,
+				374AA23F97E4508189581EDC /* LiquidGlassTheme.swift */,
+				5F0907526FD2447B216E6E4E /* Localizable.xcstrings */,
+				C5BE83F454E9BD16AAF47FF1 /* WatchBackgroundRefresh.swift */,
+				137403E1678083C46AFA4380 /* WatchDashboardView.swift */,
+				D161873E46FD5828CC50814F /* WatchRelayController.swift */,
+				77B80B2675B95F15F16A8822 /* WatchSettingsView.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		3D121EFF7E40A1659E01E3D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607544E396E3B1365F2C14E2 /* AgentBridgeMac.app */,
+				82DA2FBB55C578DEA96876F6 /* CodexLiveActivity.appex */,
+				361B4938207FE80CC57D6367 /* CodexRelay.app */,
+				81B6C1733E9680377C15F1B5 /* CodexWatch.app */,
+				1B93B2ACF32554D9BBA3EB18 /* CodexWatchWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E30FCDB9A6C8AE0C5A0BAF4 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				79F2F32BE693E0F115AE1953 /* iOS */,
+				AC0D3BBFF049657AC82B95AC /* LiveActivity */,
+				315B384475E2D427A879BE8A /* Mac */,
+				34D5B9117418E2EC27FDBA7A /* Watch */,
+				ED6927E41D05C561AB4C7656 /* WatchWidget */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		72D7A4FB568A61F01A2E9F7D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B6BBCF0C732BB7B8539CB353 /* codex-control */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		79F2F32BE693E0F115AE1953 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DB519B4ACB973DA06485564B /* CodexRelayApp.swift */,
+				7CC3ED9FC0D5C944E5A915A6 /* LiquidGlassTheme.swift */,
+				AB86D352F61A741DC09D50D9 /* LiveActivityManager.swift */,
+				A71562E72687CE91A63E0CCB /* Localizable.xcstrings */,
+				0BECEE48660000580369ECA3 /* PhoneDashboardView.swift */,
+				354D2DD2ECAB254834301628 /* PhoneRelayController.swift */,
+				7DCEC23CA15F741998ADC781 /* PhoneSettingsView.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		8C529F0FC702E518E85A3EAA = {
+			isa = PBXGroup;
+			children = (
+				D94A21A64490E74BA1D16076 /* Package.swift */,
+				3E30FCDB9A6C8AE0C5A0BAF4 /* Apps */,
+				F52B295C74E154E383A4BB0A /* Config */,
+				72D7A4FB568A61F01A2E9F7D /* Packages */,
+				F0B8C11922621EC03A45AA68 /* Resources */,
+				E3926DA4AD2B48843DF4E415 /* Frameworks */,
+				3D121EFF7E40A1659E01E3D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E813140CED4352A420FC2C3 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				4941C96645C887470B210EE5 /* AgentBridgeMac.entitlements */,
+				D50CB12563875F948F9B4DAD /* Assets.xcassets */,
+				D3BFC7496D7859E9479DEA0D /* Info.plist */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		AC0D3BBFF049657AC82B95AC /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				57352E1B5FD738EC1D2019C1 /* CodexLiveActivityBundle.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		B6BAD4774CC3C27017AE5A9E /* WatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6C1663FC71386BCA23048F36 /* CodexWatchWidget.entitlements */,
+				7D6B9A0FF00699004D057DC3 /* Info.plist */,
+			);
+			path = WatchWidget;
+			sourceTree = "<group>";
+		};
+		CBC4DA481026C79F8728CF23 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F3E4DEF2B31151C89F7A29DB /* Assets.xcassets */,
+				F8DF119AE793973561F80B40 /* CodexRelay.entitlements */,
+				50395578DAD1EF8B8C4AADE1 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		E3926DA4AD2B48843DF4E415 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E34702C660C67DF9E6547425 /* ActivityKit.framework */,
+				FE68B587EDD08E3D11E36AD6 /* IOKit.framework */,
+				779F18C806EF4126A8C47592 /* LocalAuthentication.framework */,
+				08BABC71704A305AA52BC216 /* MultipeerConnectivity.framework */,
+				57AFC288F1554C9BED3D3AB1 /* Network.framework */,
+				0F71FADD716B1843E0B83215 /* WatchConnectivity.framework */,
+				96582CDF30667D056F83C9E4 /* WidgetKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED6927E41D05C561AB4C7656 /* WatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				85DDA327CA5D51EBBDECCFAB /* CodexWatchWidget.swift */,
+			);
+			path = WatchWidget;
+			sourceTree = "<group>";
+		};
+		F0B8C11922621EC03A45AA68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBC4DA481026C79F8728CF23 /* iOS */,
+				F5D1552BEE581D09E76042C6 /* LiveActivity */,
+				9E813140CED4352A420FC2C3 /* Mac */,
+				16B50F0338623ED3F2D833F4 /* Watch */,
+				B6BAD4774CC3C27017AE5A9E /* WatchWidget */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F52B295C74E154E383A4BB0A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				22265027BF81E166390507BD /* Defaults.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F5D1552BEE581D09E76042C6 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				1D2514A8F77CA12CD078D7E4 /* Info.plist */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		448E9C1508E956B1BF84B826 /* CodexRelay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72F48BCBAD5C1476BAB250A /* Build configuration list for PBXNativeTarget "CodexRelay" */;
+			buildPhases = (
+				5F5B09C249A218AEA27BE5E8 /* Sources */,
+				C3C5050469E1009F8A2A766F /* Resources */,
+				4BC742A0E90C39D655A6C266 /* Frameworks */,
+				10A0490C346C2C796688F0A6 /* Embed Foundation Extensions */,
+				249BB80FB9CFB5ED8C0FADE2 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2B2207A6482CEE927375B10 /* PBXTargetDependency */,
+				D52FC438AC1E0BEB07950965 /* PBXTargetDependency */,
+			);
+			name = CodexRelay;
+			packageProductDependencies = (
+				B9942FCFB4952EAD7960AC6E /* CodexWatchCore */,
+			);
+			productName = CodexRelay;
+			productReference = 361B4938207FE80CC57D6367 /* CodexRelay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C269D1F7F8C72CFFB4C6721 /* CodexWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C03A64B637A1DD89B5DCC8E6 /* Build configuration list for PBXNativeTarget "CodexWatch" */;
+			buildPhases = (
+				EE67F308F9ED9CF964AAB3C2 /* Sources */,
+				80B070F40894D4E5D897CDF0 /* Resources */,
+				FF288626B9AA6EEFE4BB6C2B /* Frameworks */,
+				BAB35C2F773BF2A3959FA542 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46AC7BFECFA9CF34CB0C8EC7 /* PBXTargetDependency */,
+			);
+			name = CodexWatch;
+			packageProductDependencies = (
+				CBBCF6D03A8E40F05E3ACB4A /* CodexWatchCore */,
+			);
+			productName = CodexWatch;
+			productReference = 81B6C1733E9680377C15F1B5 /* CodexWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A7394805E971C063A2464F2F /* CodexWatchWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF5BBEA78FE14F0232D1D349 /* Build configuration list for PBXNativeTarget "CodexWatchWidget" */;
+			buildPhases = (
+				0847C8F4C622753E49001063 /* Sources */,
+				51C151F9569198F218F31E33 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodexWatchWidget;
+			packageProductDependencies = (
+				3FE2A85E2CCA1F6F35C2DA47 /* CodexWatchCore */,
+			);
+			productName = CodexWatchWidget;
+			productReference = 1B93B2ACF32554D9BBA3EB18 /* CodexWatchWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B31F9DC2A5B56A2CBBB52616 /* CodexLiveActivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFFDB80981DD13B340B4D473 /* Build configuration list for PBXNativeTarget "CodexLiveActivity" */;
+			buildPhases = (
+				8433C851E7CEBBF36EF36E82 /* Sources */,
+				EC43DF6D40D58E9D3D58BC4B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodexLiveActivity;
+			packageProductDependencies = (
+				81CC77EA83AA0257A9F0F933 /* CodexWatchCore */,
+			);
+			productName = CodexLiveActivity;
+			productReference = 82DA2FBB55C578DEA96876F6 /* CodexLiveActivity.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		BFA2ADA95A7C95BEDD75671C /* AgentBridgeMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4B87F69EB56A347A0BA8F4F /* Build configuration list for PBXNativeTarget "AgentBridgeMac" */;
+			buildPhases = (
+				FB2C33E3C4136852ED680BD0 /* Sources */,
+				B44EBAD501FEA9086E1F4835 /* Resources */,
+				7227E084BE5DF7541562BDDA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AgentBridgeMac;
+			packageProductDependencies = (
+				0963CC672EE9C56EA62F7124 /* CodexWatchCore */,
+				174FB7C64B98917848E2E25E /* CodexBridgeKit */,
+			);
+			productName = AgentBridgeMac;
+			productReference = 607544E396E3B1365F2C14E2 /* AgentBridgeMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8203A90F3D38CFD6E8CAEB51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					448E9C1508E956B1BF84B826 = {
+						ProvisioningStyle = Automatic;
+					};
+					4C269D1F7F8C72CFFB4C6721 = {
+						ProvisioningStyle = Automatic;
+					};
+					A7394805E971C063A2464F2F = {
+						ProvisioningStyle = Automatic;
+					};
+					B31F9DC2A5B56A2CBBB52616 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B2B5A0801F10DF0113080568 /* Build configuration list for PBXProject "CodexWatch" */;
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				"zh-Hans",
+			);
+			mainGroup = 8C529F0FC702E518E85A3EAA;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9FC6249D8C482769CBB64094 /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3D121EFF7E40A1659E01E3D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFA2ADA95A7C95BEDD75671C /* AgentBridgeMac */,
+				448E9C1508E956B1BF84B826 /* CodexRelay */,
+				B31F9DC2A5B56A2CBBB52616 /* CodexLiveActivity */,
+				4C269D1F7F8C72CFFB4C6721 /* CodexWatch */,
+				A7394805E971C063A2464F2F /* CodexWatchWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80B070F40894D4E5D897CDF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA5519399515DA9653FB8A8B /* Assets.xcassets in Resources */,
+				CA4BB9C3BF433141418CB60E /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44EBAD501FEA9086E1F4835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B955DBD51726736C60D211E /* Assets.xcassets in Resources */,
+				C9B5596C8C736450EFE7C4AF /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C5050469E1009F8A2A766F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31BBF518C91A874A9E99BCEF /* Assets.xcassets in Resources */,
+				88DDD978C7273A36D7B98DCC /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0847C8F4C622753E49001063 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC602D75F85CCB5D89C1C38 /* CodexWatchWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5B09C249A218AEA27BE5E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01705E8B3BE1066A822FEAAE /* CodexRelayApp.swift in Sources */,
+				99CE2023AE22CAAADC15455A /* LiquidGlassTheme.swift in Sources */,
+				40EC5A0998FDE0E19F6ABA7D /* LiveActivityManager.swift in Sources */,
+				B95867429713679986B0F648 /* PhoneDashboardView.swift in Sources */,
+				606CB784316341459E3DF284 /* PhoneRelayController.swift in Sources */,
+				F634C503E4C967158BB421BB /* PhoneSettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8433C851E7CEBBF36EF36E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C8CD3478444F95D0FEE6824 /* CodexLiveActivityBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE67F308F9ED9CF964AAB3C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB6BBF8B36103C863C20E2B /* CodexWatchApp.swift in Sources */,
+				727A9A44AEFCD28028049CA9 /* LiquidGlassTheme.swift in Sources */,
+				5E19A7A9E409B9DC5AC0A373 /* WatchBackgroundRefresh.swift in Sources */,
+				A6D2E8A4FA7E6EADDEEA4EBF /* WatchDashboardView.swift in Sources */,
+				832D24DCB27873B15DCD7549 /* WatchRelayController.swift in Sources */,
+				81837E9E49ACCC2B90D52956 /* WatchSettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB2C33E3C4136852ED680BD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A0BA9A6895D1030BF18088C /* AgentBridgeMacApp.swift in Sources */,
+				C07F5A22B55282DD5FE6196F /* ChatGPTDesktopThreadController.swift in Sources */,
+				290CEA525B03921F9BD47175 /* ChromeChatExtensionController.swift in Sources */,
+				5CAC8A1271E9C4F9D540F30B /* LiquidGlassTheme.swift in Sources */,
+				B04F997AD163481A3447D52F /* MacBridgeMenuView.swift in Sources */,
+				5B8BCC5A7B505FFDD696FE03 /* MacBridgeViewModel.swift in Sources */,
+				AE00F7A53237B5B09E8EF8EF /* MacSettingsView.swift in Sources */,
+				ED69AD406D702C498D5CF33B /* WatchApprovalGate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46AC7BFECFA9CF34CB0C8EC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7394805E971C063A2464F2F /* CodexWatchWidget */;
+			targetProxy = 894DB63FF049DFEC5E4852C0 /* PBXContainerItemProxy */;
+		};
+		D52FC438AC1E0BEB07950965 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C269D1F7F8C72CFFB4C6721 /* CodexWatch */;
+			targetProxy = EDF43FFCACCF08F2F052A7DE /* PBXContainerItemProxy */;
+		};
+		F2B2207A6482CEE927375B10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B31F9DC2A5B56A2CBBB52616 /* CodexLiveActivity */;
+			targetProxy = B7032B04AC78D65E75F0E715 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A5674A260467020067F6E51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODEX_BROWSER_GATEWAY_ENABLED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 20;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.2.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		267D9ED1166174EABD31382F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/WatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay.watchkitapp.widget;
+				PRODUCT_NAME = "Codex Watch Widget";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		31EDF75D24233376CB634991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/WatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay.watchkitapp.widget;
+				PRODUCT_NAME = "Codex Watch Widget";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		37441DFE2E831F1106429DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Watch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Codex Watch";
+				INFOPLIST_KEY_CodexBrowserGatewayEnabled = "$(CODEX_BROWSER_GATEWAY_ENABLED)";
+				INFOPLIST_KEY_CodexRelayRoom = "$(CODEX_RELAY_ROOM)";
+				INFOPLIST_KEY_CodexRelaySecret = "$(CODEX_RELAY_SECRET)";
+				INFOPLIST_KEY_CodexRelayURL = "$(CODEX_RELAY_URL)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.sunzizai.codexwatch.relay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay.watchkitapp;
+				PRODUCT_NAME = "Codex Watch";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		385F3655E6FD25F0EE1D0D48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/iOS/Info.plist;
+				INFOPLIST_KEY_CodexBrowserGatewayEnabled = "$(CODEX_BROWSER_GATEWAY_ENABLED)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay;
+				PRODUCT_NAME = "Codex Relay";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5A40DFBE8CA4A31F880ABDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/LiveActivity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay.liveactivity;
+				PRODUCT_NAME = "Codex Live Activity";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		675690D0B9D322DCE4941146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODEX_BROWSER_GATEWAY_ENABLED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 20;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.2.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		705488A9F71CEFBAABF0D7DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Watch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Codex Watch";
+				INFOPLIST_KEY_CodexBrowserGatewayEnabled = "$(CODEX_BROWSER_GATEWAY_ENABLED)";
+				INFOPLIST_KEY_CodexRelayRoom = "$(CODEX_RELAY_ROOM)";
+				INFOPLIST_KEY_CodexRelaySecret = "$(CODEX_RELAY_SECRET)";
+				INFOPLIST_KEY_CodexRelayURL = "$(CODEX_RELAY_URL)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.sunzizai.codexwatch.relay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay.watchkitapp;
+				PRODUCT_NAME = "Codex Watch";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		A44AB8371A9DEE3FB60AB6DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/iOS/Info.plist;
+				INFOPLIST_KEY_CodexBrowserGatewayEnabled = "$(CODEX_BROWSER_GATEWAY_ENABLED)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay;
+				PRODUCT_NAME = "Codex Relay";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		ACC9014D4A75E6DE8E5EA238 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/Mac/AgentBridgeMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Mac/Info.plist;
+				INFOPLIST_KEY_CodexBrowserGatewayEnabled = "$(CODEX_BROWSER_GATEWAY_ENABLED)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.mac;
+				PRODUCT_NAME = "Agent Bridge";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		C71CA615628C1FF696BB3C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/LiveActivity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.relay.liveactivity;
+				PRODUCT_NAME = "Codex Live Activity";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5C987D4000F3BC306E207A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22265027BF81E166390507BD /* Defaults.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/Mac/AgentBridgeMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Mac/Info.plist;
+				INFOPLIST_KEY_CodexBrowserGatewayEnabled = "$(CODEX_BROWSER_GATEWAY_ENABLED)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunzizai.codexwatch.mac;
+				PRODUCT_NAME = "Agent Bridge";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A72F48BCBAD5C1476BAB250A /* Build configuration list for PBXNativeTarget "CodexRelay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A44AB8371A9DEE3FB60AB6DB /* Debug */,
+				385F3655E6FD25F0EE1D0D48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF5BBEA78FE14F0232D1D349 /* Build configuration list for PBXNativeTarget "CodexWatchWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31EDF75D24233376CB634991 /* Debug */,
+				267D9ED1166174EABD31382F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2B5A0801F10DF0113080568 /* Build configuration list for PBXProject "CodexWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675690D0B9D322DCE4941146 /* Debug */,
+				1A5674A260467020067F6E51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C03A64B637A1DD89B5DCC8E6 /* Build configuration list for PBXNativeTarget "CodexWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37441DFE2E831F1106429DD8 /* Debug */,
+				705488A9F71CEFBAABF0D7DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D4B87F69EB56A347A0BA8F4F /* Build configuration list for PBXNativeTarget "AgentBridgeMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC9014D4A75E6DE8E5EA238 /* Debug */,
+				E5C987D4000F3BC306E207A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EFFDB80981DD13B340B4D473 /* Build configuration list for PBXNativeTarget "CodexLiveActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A40DFBE8CA4A31F880ABDA0 /* Debug */,
+				C71CA615628C1FF696BB3C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9FC6249D8C482769CBB64094 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0963CC672EE9C56EA62F7124 /* CodexWatchCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodexWatchCore;
+		};
+		174FB7C64B98917848E2E25E /* CodexBridgeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodexBridgeKit;
+		};
+		3FE2A85E2CCA1F6F35C2DA47 /* CodexWatchCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodexWatchCore;
+		};
+		81CC77EA83AA0257A9F0F933 /* CodexWatchCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodexWatchCore;
+		};
+		B9942FCFB4952EAD7960AC6E /* CodexWatchCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodexWatchCore;
+		};
+		CBBCF6D03A8E40F05E3ACB4A /* CodexWatchCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodexWatchCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8203A90F3D38CFD6E8CAEB51 /* Project object */;
+}

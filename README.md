@@ -11,9 +11,9 @@ Codex Control 是一套 Mac、iPhone 和 Apple Watch 原生伴随应用。查看
 [下载 Mac 应用包](https://github.com/sunzizaisun/codex-control/releases/download/v0.2.1/Codex-Control-Mac-universal.zip) · [下载源码](https://github.com/sunzizaisun/codex-control/archive/refs/heads/main.zip)
 
 - **Mac**：解压应用包，将 `Agent Bridge.app` 拖入“应用程序”。支持 Apple Silicon 与 Intel。
-- **iPhone / Apple Watch**：下载源码并解压，双击 `Setup.command`，在 Xcode 工程里选择自己的签名团队与设备运行。
+- **iPhone / Apple Watch**：下载源码并解压，双击 `CodexWatch.xcodeproj`，选择自己的签名团队与设备运行。
 
-Mac 包为临时签名，**未经苹果公证**，系统可能阻止打开；不要关闭系统安全保护。手机／手表的免费安装需要完整 Xcode、Node.js 24+ 和 XcodeGen。首次使用仍需配置自己的服务。见 [安装说明](docs/INSTALL.md)。
+Mac 包为临时签名，**未经苹果公证**，系统可能阻止打开；不要关闭系统安全保护。手机／手表的免费安装只需完整 Xcode，不必先装命令行工具。首次使用仍需配置自己的服务。见 [安装说明](docs/INSTALL.md)。
 
 ## 功能
 

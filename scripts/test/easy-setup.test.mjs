@@ -70,7 +70,7 @@ async function fixture() {
   const root = await mkdtemp(path.join(tmpdir(), 'codex-package-test-'));
   const source = path.join(root, 'source'), destination = path.join(root, 'isolated');
   for (const name of ['Apps', 'Sources', 'Tests', 'Resources', 'Config', 'scripts', 'dist']) await mkdir(path.join(source, name), { recursive: true });
-  for (const name of ['Package.swift', 'project.yml', 'Config/RemoteRelay.example.xcconfig', 'scripts/bootstrap.mjs', 'scripts/generate-icons.mjs']) await writeFile(path.join(source, name), 'public fixture');
+  for (const name of ['Package.swift', 'project.yml', 'Config/Defaults.xcconfig', 'Config/RemoteRelay.example.xcconfig', 'scripts/bootstrap.mjs', 'scripts/generate-icons.mjs']) await writeFile(path.join(source, name), 'public fixture');
   await writeFile(path.join(source, 'Config/RemoteRelay.xcconfig'), 'DO_NOT_PACKAGE_PRIVATE_CONFIG');
   await writeFile(path.join(source, 'dist/old-app.txt'), 'DO_NOT_PACKAGE_OLD_BUILD');
   return { root, source, destination };
@@ -119,5 +119,19 @@ test('archive inspection rejects machine metadata, private configuration, signin
   for (const entry of ['__MACOSX/._file', 'App/.DS_Store', 'App/._LICENSE', 'App/RemoteRelay.xcconfig',
     'App/key.p12', 'App/profile.mobileprovision', '../outside', '/absolute']) {
     assert.throws(() => validateArchiveEntries(entry), /unexpected_package_entry/);
+  }
+});
+
+test('included Xcode project uses public defaults without a personal team or absolute source paths', async () => {
+  const project = await readFile(new URL('../../CodexWatch.xcodeproj/project.pbxproj', import.meta.url), 'utf8');
+  const defaults = await readFile(new URL('../../Config/Defaults.xcconfig', import.meta.url), 'utf8');
+  assert(project.includes('Defaults.xcconfig'));
+  assert(!/\/Users\/|\/private\/|\/var\/|DEVELOPMENT_TEAM\s*=/.test(project));
+  assert(defaults.includes('#include? "RemoteRelay.xcconfig"'));
+  assert.match(defaults, /^CODEX_RELAY_SECRET =\s*$/m);
+  for (const scheme of ['AgentBridgeMac', 'CodexRelay', 'CodexWatch']) {
+    const xml = await readFile(new URL(`../../CodexWatch.xcodeproj/xcshareddata/xcschemes/${scheme}.xcscheme`, import.meta.url), 'utf8');
+    assert(xml.includes('ReferencedContainer="container:CodexWatch.xcodeproj"')
+      || xml.includes('ReferencedContainer = "container:CodexWatch.xcodeproj"'));
   }
 });

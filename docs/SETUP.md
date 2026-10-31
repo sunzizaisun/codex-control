@@ -4,15 +4,15 @@
 
 ## 1. 原生应用
 
-安装完整 Xcode、需要的平台 SDK 和 XcodeGen。基础目标为 macOS 13、iOS 17、watchOS 10；Live Activity 扩展目标为 iOS 18。新系统使用可用的玻璃材质，旧系统采用系统回退样式。
+安装完整 Xcode 和需要的平台 SDK，直接打开随附的 `CodexWatch.xcodeproj`。基础目标为 macOS 13、iOS 17、watchOS 10；Live Activity 扩展目标为 iOS 18。新系统使用可用的玻璃材质，旧系统采用系统回退样式。
 
-在仓库根目录执行：
+仅在需要重新生成工程时，安装 Node.js 24+、XcodeGen 2.45.4+，在仓库根目录执行：
 
 ```sh
 node scripts/prepare-xcode.mjs
 ```
 
-`bootstrap` 只创建缺失的空配置，不覆盖已有配置，不连接云端、不读取 Keychain。图标脚本生成本项目自己的图形，不使用 OpenAI 图标。Xcode 工程由 `project.yml` 生成，不分发个人工程或签名资料。
+`bootstrap` 只创建缺失的空配置，不覆盖已有配置，不连接云端、不读取 Keychain。图标脚本生成本项目自己的图形，不使用 OpenAI 图标。随附 Xcode 工程由 `project.yml` 生成，不含个人工程设置或签名资料。`Config/Defaults.xcconfig` 提供空默认值，并可选加载被忽略的本地 `RemoteRelay.xcconfig`。
 
 在 Xcode 中为每个应用及扩展选择自己的开发团队，并使用可注册的唯一 Bundle ID。应用与扩展的 Bundle ID、关联的 companion ID 和受保护存储组需要一致；不要仅修改其中一个。
 

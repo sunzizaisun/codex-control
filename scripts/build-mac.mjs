@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { developmentEnvironment, prepareXcode, projectRoot } from './prepare-xcode.mjs';
 
 const inputs = ['Apps', 'Sources', 'Tests', 'Resources', 'Package.swift', 'project.yml',
-  'Config/RemoteRelay.example.xcconfig', 'scripts/bootstrap.mjs', 'scripts/generate-icons.mjs'];
+  'Config/Defaults.xcconfig', 'Config/RemoteRelay.example.xcconfig', 'scripts/bootstrap.mjs', 'scripts/generate-icons.mjs'];
 
 // Enumerate only the required public source, never the user's local Config,
 // Keychain, existing build products or signing profiles.
