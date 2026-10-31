@@ -1161,7 +1161,8 @@ private actor SnapshotPublicationProbe {
     #!/bin/sh
     IFS= read -r request
     printf '%s\\n' '{"id":1,"result":{}}'
-    sleep 0.2
+    IFS= read -r initialized
+    IFS= read -r exit_request
     """
     try Data(script.utf8).write(to: scriptURL)
     try FileManager.default.setAttributes(
@@ -1178,6 +1179,17 @@ private actor SnapshotPublicationProbe {
         await exited.increment()
     }
     _ = try await client.start()
+
+    // Exit after the startup handshake, not on a wall-clock timer that can
+    // expire while a loaded CI runner is still resuming initialize().
+    do {
+        _ = try await client.request(method: "test/exit", timeout: .seconds(5))
+        Issue.record("exited child unexpectedly answered exit request")
+    } catch AppServerClientError.processExited {
+        // Expected: the fixture exits without replying to the final request.
+    } catch {
+        Issue.record("unexpected exit error: \(error)")
+    }
 
     let deadline = Date().addingTimeInterval(5)
     while Date() < deadline {
